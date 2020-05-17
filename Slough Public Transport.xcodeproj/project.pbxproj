@@ -13,6 +13,10 @@
 		80B7CFE7246DCD5D006A7D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B7CFE6246DCD5D006A7D40 /* Assets.xcassets */; };
 		80B7CFEA246DCD5E006A7D40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B7CFE8246DCD5E006A7D40 /* LaunchScreen.storyboard */; };
 		80B7CFF2246DCFFD006A7D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B7CFF1246DCFFD006A7D40 /* Main.storyboard */; };
+		80B7CFF42471566A006A7D40 /* Localities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFF32471566A006A7D40 /* Localities.swift */; };
+		80B7CFFA247170D2006A7D40 /* LocationBusStopsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */; };
+		80F0F64A247181D2002EA2B9 /* LocationBusStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F649247181D2002EA2B9 /* LocationBusStopManager.swift */; };
+		80F0F64C2471A02C002EA2B9 /* BusStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F64B2471A02C002EA2B9 /* BusStops.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		80B7CFE9246DCD5E006A7D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80B7CFEB246DCD5E006A7D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B7CFF1246DCFFD006A7D40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		80B7CFF32471566A006A7D40 /* Localities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localities.swift; sourceTree = "<group>"; };
+		80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBusStopsData.swift; sourceTree = "<group>"; };
+		80F0F649247181D2002EA2B9 /* LocationBusStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBusStopManager.swift; sourceTree = "<group>"; };
+		80F0F64B2471A02C002EA2B9 /* BusStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStops.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,51 @@
 		80B7CFDC246DCD5C006A7D40 /* Slough Public Transport */ = {
 			isa = PBXGroup;
 			children = (
-				80B7CFDD246DCD5C006A7D40 /* AppDelegate.swift */,
-				80B7CFDF246DCD5C006A7D40 /* SceneDelegate.swift */,
-				80B7CFF1246DCFFD006A7D40 /* Main.storyboard */,
-				80B7CFE1246DCD5C006A7D40 /* ViewController.swift */,
+				80B7CFF8247162A6006A7D40 /* Supporting Files */,
+				80B7CFF72471629A006A7D40 /* Controllers */,
+				80B7CFF624716293006A7D40 /* Views */,
+				80B7CFF52471628D006A7D40 /* Model */,
 				80B7CFE6246DCD5D006A7D40 /* Assets.xcassets */,
-				80B7CFE8246DCD5E006A7D40 /* LaunchScreen.storyboard */,
 				80B7CFEB246DCD5E006A7D40 /* Info.plist */,
 			);
 			path = "Slough Public Transport";
+			sourceTree = "<group>";
+		};
+		80B7CFF52471628D006A7D40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80F0F649247181D2002EA2B9 /* LocationBusStopManager.swift */,
+				80B7CFF32471566A006A7D40 /* Localities.swift */,
+				80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */,
+				80F0F64B2471A02C002EA2B9 /* BusStops.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80B7CFF624716293006A7D40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80B7CFE8246DCD5E006A7D40 /* LaunchScreen.storyboard */,
+				80B7CFF1246DCFFD006A7D40 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		80B7CFF72471629A006A7D40 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80B7CFE1246DCD5C006A7D40 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		80B7CFF8247162A6006A7D40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				80B7CFDD246DCD5C006A7D40 /* AppDelegate.swift */,
+				80B7CFDF246DCD5C006A7D40 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B7CFF42471566A006A7D40 /* Localities.swift in Sources */,
 				80B7CFE2246DCD5C006A7D40 /* ViewController.swift in Sources */,
+				80B7CFFA247170D2006A7D40 /* LocationBusStopsData.swift in Sources */,
+				80F0F64A247181D2002EA2B9 /* LocationBusStopManager.swift in Sources */,
 				80B7CFDE246DCD5C006A7D40 /* AppDelegate.swift in Sources */,
+				80F0F64C2471A02C002EA2B9 /* BusStops.swift in Sources */,
 				80B7CFE0246DCD5C006A7D40 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
