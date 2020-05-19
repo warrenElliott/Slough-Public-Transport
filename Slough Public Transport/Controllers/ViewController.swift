@@ -20,34 +20,38 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 500
     
-    var latitude = String()
-    var longitude = String()
+    var latitude: String?
+    var longitude: String?
     
     var customLatitude = String()
     var customLongitude = String()
     
     var locationBusStopManager = LocationBusStopManager()
     
-    
+    var busStopsAtLocation = [BusStops]()
+    var busStopAnnotations = [MKPointAnnotation]()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        checkLocationServices()
-        checkLocationAuth()
+        
         mapView.delegate = self
         locationBusStopManager.delegate = self
-    
+        
+        checkLocationServices()
+        checkLocationAuth()
+
+        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+        
+        latitude = String(format:"%.3f", (self.locationManager.location?.coordinate.latitude)! as Double)
+        longitude = String(format:"%.3f",(self.locationManager.location?.coordinate.longitude)! as Double)
+        
+        locationBusStopManager.fetchBusStops(with: latitude!, and: longitude!)
+        
     }
     
     
-    func didUpdateMap(stops: [BusStops]) {
-        print (stops)
-    }
-    
-    func didFailWithError(error: Error) {
-        print (error)
-    }
+
     
     func checkLocationManager(){
         
@@ -82,14 +86,26 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
     func checkLocationAuth(){
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
+            
             mapView.showsUserLocation = true
             centerViewOnUserLocation()
-            //locationManager.requestLocation()
-            latitude = String(format:"%.3f", (locationManager.location?.coordinate.latitude)! as Double)
-            longitude = String(format:"%.3f",(locationManager.location?.coordinate.longitude)! as Double)
-            
-            locationBusStopManager.fetchBusStops(with: latitude, and: longitude)
-            
+//
+//            if locationManager.location != nil{
+//
+//                latitude = String(format:"%.3f", (self.locationManager.location?.coordinate.latitude)! as Double)
+//                longitude = String(format:"%.3f",(self.locationManager.location?.coordinate.longitude)! as Double)
+//
+//                locationBusStopManager.fetchBusStops(with: latitude!, and: longitude!)
+//
+//            }
+//
+//            else{
+//                print ("there was an error")
+//                mapView.showsUserLocation = true
+//                centerViewOnUserLocation()
+//
+//            }
+
         case .denied:
             break //not allowed, show alert instructing how to turn on app permission
         case .notDetermined:
@@ -103,6 +119,17 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
             locationManager.requestWhenInUseAuthorization()
             mapView.showsUserLocation = true
         }
+    }
+    
+    func didUpdateMap(stops: [BusStops]) {
+        busStopsAtLocation = stops
+        
+        createBusStops(busStops: busStopsAtLocation)
+        
+    }
+    
+    func didFailWithError(error: Error) {
+        print (error)
     }
     
 }
@@ -160,8 +187,41 @@ extension ViewController: MKMapViewDelegate{
         }
         
         else{
+            
+            self.mapView.removeAnnotations(self.busStopAnnotations)
             locationBusStopManager.fetchBusStops(with: customLatitude, and: customLongitude)
         }
+        
+    }
+    
+    func createBusStops (busStops: [BusStops]){
+        
+//        let locate = [MKPointAnnotation]()
+        
+        //mapView.removeAnnotations(busStopAnnotations)
+        busStopAnnotations = []
+        
+        for stop in busStops{
+                
+            let annotations = MKPointAnnotation()
+            annotations.title = stop.name
+            
+            annotations.coordinate.longitude = stop.longitude
+            annotations.coordinate.latitude = stop.latitude
+            
+            busStopAnnotations.append(annotations)
+
+        }
+        
+        DispatchQueue.main.async {
+
+            self.mapView.addAnnotations(self.busStopAnnotations)
+            
+        }
+        
+        
+        print ("request done")
+        
         
     }
     

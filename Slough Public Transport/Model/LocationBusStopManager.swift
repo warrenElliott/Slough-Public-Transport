@@ -26,8 +26,6 @@ struct LocationBusStopManager{
         
         performRequest(with: urlString)
         
-        print (urlString)
-        
     }
     
     func performRequest (with urlString: String){
@@ -74,8 +72,18 @@ struct LocationBusStopManager{
             
             for stop in decodedData.member{
                 
-                let busStop = BusStops(name: stop.name, latitude: stop.latitude, longitude: stop.longitude, description: stop.description, atcocode: stop.atcocode)
-                locationBusStops.append(busStop)
+                for locality in Localities().localities{
+                    
+                    if stop.description == locality{
+                        
+                        let busStop = BusStops(name: stop.name, latitude: stop.latitude, longitude: stop.longitude, description: stop.description, atcocode: stop.atcocode)
+                        locationBusStops.append(busStop)
+                        
+                    }
+                    
+                }
+                
+                
                 
             }
     
