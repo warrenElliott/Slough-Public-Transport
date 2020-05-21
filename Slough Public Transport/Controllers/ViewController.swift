@@ -130,9 +130,11 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
 
 extension ViewController: CLLocationManagerDelegate{
     
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
@@ -141,13 +143,12 @@ extension ViewController: CLLocationManagerDelegate{
         
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
         print("Failed to find user's location: \(error.localizedDescription)")
         
     }
-    
-    
     
 }
 
@@ -159,6 +160,7 @@ extension ViewController: MKMapViewDelegate{
         customLocator.startAnimating()
         
     }
+    
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         
@@ -183,10 +185,13 @@ extension ViewController: MKMapViewDelegate{
     }
     
     
-    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        customLocator.isHidden = true
         print ("did select")
+        
     }
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -202,14 +207,13 @@ extension ViewController: MKMapViewDelegate{
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
             annotationView?.image = UIImage(named: "busStopIcon")
+
+//            let detailButton = UIButton(type: .detailDisclosure)
+//            annotationView?.rightCalloutAccessoryView = detailButton
             
-            
-            // for a disclosure button, you'd might do something like:
-            //
-            //let detailButton = UIButton(type: .detailDisclosure)
-            //annotationView?.rightCalloutAccessoryView = detailButton
         } else {
             annotationView?.annotation = annotation
+            //annotationView?.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         }
         
         return annotationView
@@ -225,14 +229,12 @@ extension ViewController: MKMapViewDelegate{
             let annotations = MKPointAnnotation()
             
             annotations.title = stop.name
-            annotations.subtitle = "7, 12, 13"
+            annotations.subtitle = stop.atcocode 
             annotations.coordinate.longitude = stop.longitude
             annotations.coordinate.latitude = stop.latitude
             
             busStopAnnotations.append(annotations)
-            print (annotations)
-            
-            
+
         }
         
         DispatchQueue.main.async {
@@ -241,13 +243,9 @@ extension ViewController: MKMapViewDelegate{
             
         }
         
-        
         print ("request done")
         
-        
     }
-    
-    
     
 }
 
