@@ -22,7 +22,6 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
     
     var latitude: String?
     var longitude: String?
-    
     var customLatitude = String()
     var customLongitude = String()
     
@@ -30,6 +29,8 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
     
     var busStopsAtLocation = [BusStops]()
     var busStopAnnotations: [MKPointAnnotation] = []
+    
+    var annotationData: [BusStopAnnotationData] = []
     
     override func viewDidLoad() {
         
@@ -140,7 +141,6 @@ extension ViewController: CLLocationManagerDelegate{
         
         checkLocationAuth()
         
-        
     }
     
     
@@ -187,10 +187,35 @@ extension ViewController: MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
+        if view.annotation is MKUserLocation{
+            return
+        }
+        
+        else{
+            let busStopAnnotation = view.annotation as! BusStopAnnotationData
+            let calloutView = UIView()
+            let lab = UILabel()
+            lab.text = busStopAnnotation.busStopName
+            calloutView.addSubview(lab)
+            
+            calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+            view.addSubview(calloutView)
+            mapView.setCenter((view.annotation?.coordinate)!, animated: true)
+            
+            self.view?.bringSubviewToFront(calloutView)
+            
+            print (busStopAnnotation.atcoCode!)
+            
+        }
+        
+        
         customLocator.isHidden = true
         print ("did select")
         
+        
     }
+    
+    
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -205,15 +230,13 @@ extension ViewController: MKMapViewDelegate{
         
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView?.canShowCallout = true
+            annotationView?.canShowCallout = false
             annotationView?.image = UIImage(named: "busStopIcon")
-
-//            let detailButton = UIButton(type: .detailDisclosure)
-//            annotationView?.rightCalloutAccessoryView = detailButton
+       
+            //annotationView?.detailCalloutAccessoryView =  // this needs reviewing
             
         } else {
             annotationView?.annotation = annotation
-            //annotationView?.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         }
         
         return annotationView
@@ -226,20 +249,24 @@ extension ViewController: MKMapViewDelegate{
         
         for stop in busStops{
             
-            let annotations = MKPointAnnotation()
+//            let annotations = MKPointAnnotation()
+//
+//            annotations.title = stop.name
+//            annotations.subtitle = stop.atcocode
+//            annotations.coordinate.longitude = stop.longitude
+//            annotations.coordinate.latitude = stop.latitude
+//
+//            busStopAnnotations.append(annotations)
             
-            annotations.title = stop.name
-            annotations.subtitle = stop.atcocode 
-            annotations.coordinate.longitude = stop.longitude
-            annotations.coordinate.latitude = stop.latitude
+            let annotation = BusStopAnnotationData(coordinate: CLLocationCoordinate2D.init(latitude: stop.latitude, longitude: stop.longitude), busStopName: stop.name, busRoutes: "TBA", atcoCode: stop.atcocode)
             
-            busStopAnnotations.append(annotations)
+            annotationData.append(annotation)
 
         }
         
         DispatchQueue.main.async {
             
-            self.mapView.addAnnotations(self.busStopAnnotations)
+            self.mapView.addAnnotations(self.annotationData)
             
         }
         

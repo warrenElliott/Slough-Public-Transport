@@ -17,9 +17,8 @@
 		80B7CFFA247170D2006A7D40 /* LocationBusStopsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */; };
 		80F0F64A247181D2002EA2B9 /* LocationBusStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F649247181D2002EA2B9 /* LocationBusStopManager.swift */; };
 		80F0F64C2471A02C002EA2B9 /* BusStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F64B2471A02C002EA2B9 /* BusStops.swift */; };
-		80F0F6532476CC6D002EA2B9 /* BusStopDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F6522476CC6D002EA2B9 /* BusStopDetail.swift */; };
-		80F0F6552476CC80002EA2B9 /* BusStopDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F0F6542476CC80002EA2B9 /* BusStopDetail.xib */; };
-		80F0F6582476EB93002EA2B9 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F6572476EB93002EA2B9 /* CustomAnnotation.swift */; };
+		80F0F6582476EB93002EA2B9 /* BusStopAnnotationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F6572476EB93002EA2B9 /* BusStopAnnotationData.swift */; };
+		80F0F65A247763E0002EA2B9 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F659247763E0002EA2B9 /* CalloutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +34,8 @@
 		80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBusStopsData.swift; sourceTree = "<group>"; };
 		80F0F649247181D2002EA2B9 /* LocationBusStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBusStopManager.swift; sourceTree = "<group>"; };
 		80F0F64B2471A02C002EA2B9 /* BusStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStops.swift; sourceTree = "<group>"; };
-		80F0F6522476CC6D002EA2B9 /* BusStopDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopDetail.swift; sourceTree = "<group>"; };
-		80F0F6542476CC80002EA2B9 /* BusStopDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusStopDetail.xib; sourceTree = "<group>"; };
-		80F0F6572476EB93002EA2B9 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		80F0F6572476EB93002EA2B9 /* BusStopAnnotationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopAnnotationData.swift; sourceTree = "<group>"; };
+		80F0F659247763E0002EA2B9 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,7 @@
 				80B7CFF32471566A006A7D40 /* Localities.swift */,
 				80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */,
 				80F0F64B2471A02C002EA2B9 /* BusStops.swift */,
-				80F0F6572476EB93002EA2B9 /* CustomAnnotation.swift */,
+				80F0F6572476EB93002EA2B9 /* BusStopAnnotationData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -97,8 +95,7 @@
 			children = (
 				80B7CFE8246DCD5E006A7D40 /* LaunchScreen.storyboard */,
 				80B7CFF1246DCFFD006A7D40 /* Main.storyboard */,
-				80F0F6522476CC6D002EA2B9 /* BusStopDetail.swift */,
-				80F0F6542476CC80002EA2B9 /* BusStopDetail.xib */,
+				80F0F659247763E0002EA2B9 /* CalloutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,7 +176,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80B7CFF2246DCFFD006A7D40 /* Main.storyboard in Resources */,
-				80F0F6552476CC80002EA2B9 /* BusStopDetail.xib in Resources */,
 				80B7CFEA246DCD5E006A7D40 /* LaunchScreen.storyboard in Resources */,
 				80B7CFE7246DCD5D006A7D40 /* Assets.xcassets in Resources */,
 			);
@@ -193,11 +189,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				80B7CFF42471566A006A7D40 /* Localities.swift in Sources */,
-				80F0F6532476CC6D002EA2B9 /* BusStopDetail.swift in Sources */,
-				80F0F6582476EB93002EA2B9 /* CustomAnnotation.swift in Sources */,
+				80F0F6582476EB93002EA2B9 /* BusStopAnnotationData.swift in Sources */,
 				80B7CFE2246DCD5C006A7D40 /* ViewController.swift in Sources */,
 				80B7CFFA247170D2006A7D40 /* LocationBusStopsData.swift in Sources */,
 				80F0F64A247181D2002EA2B9 /* LocationBusStopManager.swift in Sources */,
+				80F0F65A247763E0002EA2B9 /* CalloutView.swift in Sources */,
 				80B7CFDE246DCD5C006A7D40 /* AppDelegate.swift in Sources */,
 				80F0F64C2471A02C002EA2B9 /* BusStops.swift in Sources */,
 				80B7CFE0246DCD5C006A7D40 /* SceneDelegate.swift in Sources */,

@@ -82,9 +82,7 @@ struct LocationBusStopManager{
                     }
                     
                 }
-                
-                
-                
+  
             }
     
             return locationBusStops
