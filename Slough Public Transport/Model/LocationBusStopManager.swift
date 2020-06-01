@@ -22,7 +22,7 @@ struct LocationBusStopManager{
     
     func fetchBusStops(with latitude: String, and longitude: String){
         
-        let urlString = "https://transportapi.com/v3/uk/places.json?lat=\(latitude)&lon=\(longitude)&type=bus_stop&app_id=295432a4&app_key=26832ef2175dc214bc6851c5c3b1a22e"
+        let urlString = "https://transportapi.com/v3/uk/places.json?lat=\(latitude)&lon=\(longitude)&type=bus_stop&app_id=29af5b59&app_key=300d18d6882d84b6a00adefd328f8722"
         
         performRequest(with: urlString)
         

@@ -11,8 +11,9 @@ import MapKit
 import UIKit
 
 class CalloutView: UIView{
-    
-    
-    
+ 
+    @IBOutlet weak var busStopName: UILabel!
+    @IBOutlet weak var torwardsInfo: UILabel!
+    @IBOutlet weak var busRoutes: UILabel!
     
 }

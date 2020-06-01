@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, BusStopsAtLocationDelegate {
+class ViewController: UIViewController, BusStopsAtLocationDelegate, UITableViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
@@ -26,18 +26,28 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
     var customLongitude = String()
     
     var locationBusStopManager = LocationBusStopManager()
+    var busDeparturesManager = BusDeparturesManager()
     
     var busStopsAtLocation = [BusStops]()
     var busStopAnnotations: [MKPointAnnotation] = []
     
     var annotationData: [BusStopAnnotationData] = []
     
+    var busDepartures: [BusStopDepartures] = []
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "TimeTableCell", bundle: nil), forCellReuseIdentifier: "TimeTableCell")
+
+        placeholderForTableView()
+        
         mapView.delegate = self
         locationBusStopManager.delegate = self
+        busDeparturesManager.secondDelegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
         checkLocationServices()
         checkLocationAuth()
@@ -60,6 +70,20 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
             
         }
         
+
+        
+    }
+    
+    func placeholderForTableView(){
+
+        let noDataLabel: UILabel = UILabel()
+        noDataLabel.text = "Tap  on  a  bus  stop  to  get  live  departures"
+        noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+        noDataLabel.font = UIFont(name: "Farah", size: 17.0)
+        noDataLabel.textAlignment = NSTextAlignment.center
+        tableView.backgroundView = noDataLabel
+        self.tableView.reloadData()
+
     }
     
     
@@ -117,6 +141,7 @@ class ViewController: UIViewController, BusStopsAtLocationDelegate {
     }
     
     func didUpdateMap(stops: [BusStops]) {
+        
         busStopsAtLocation = stops
         
         createBusStops(busStops: busStopsAtLocation)
@@ -192,17 +217,22 @@ extension ViewController: MKMapViewDelegate{
         }
         
         else{
-            let busStopAnnotation = view.annotation as! BusStopAnnotationData
-            let calloutView = UIView()
-            let lab = UILabel()
-            lab.text = busStopAnnotation.busStopName
-            calloutView.addSubview(lab)
             
-            calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
-            view.addSubview(calloutView)
+            let busStopAnnotation = view.annotation as! BusStopAnnotationData
+            let calloutView = Bundle.main.loadNibNamed("CalloutView", owner: nibName, options: nil)
+            
+            let views = calloutView?[0] as! CalloutView
+            views.layer.cornerRadius = 15
+            views.busStopName.text = busStopAnnotation.busStopName
+            views.busRoutes.text = "To be confirmed"
+            views.torwardsInfo.text = busStopAnnotation.towards
+            
+            views.center = CGPoint(x: view.bounds.size.width / 2, y: -views.bounds.size.height*0.52)
+            view.addSubview(views)
+    
             mapView.setCenter((view.annotation?.coordinate)!, animated: true)
             
-            self.view?.bringSubviewToFront(calloutView)
+            busDeparturesManager.fetchDepartures(busStopAnnotation.atcoCode!)
             
             print (busStopAnnotation.atcoCode!)
             
@@ -210,12 +240,20 @@ extension ViewController: MKMapViewDelegate{
         
         
         customLocator.isHidden = true
-        print ("did select")
-        
+
         
     }
     
     
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+           if view.isKind(of: ShowAnnotationView.self)
+           {
+               for subview in view.subviews
+               {
+                   subview.removeFromSuperview()
+               }
+           }
+    }
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -229,17 +267,16 @@ extension ViewController: MKMapViewDelegate{
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
         if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = ShowAnnotationView(annotation: annotation, reuseIdentifier: "Pin")
             annotationView?.canShowCallout = false
-            annotationView?.image = UIImage(named: "busStopIcon")
-       
-            //annotationView?.detailCalloutAccessoryView =  // this needs reviewing
-            
-        } else {
+        }
+        else {
             annotationView?.annotation = annotation
         }
         
+        annotationView?.image = UIImage(named: "busStopIcon")
         return annotationView
+        
     }
     
     
@@ -249,18 +286,16 @@ extension ViewController: MKMapViewDelegate{
         
         for stop in busStops{
             
-//            let annotations = MKPointAnnotation()
-//
-//            annotations.title = stop.name
-//            annotations.subtitle = stop.atcocode
-//            annotations.coordinate.longitude = stop.longitude
-//            annotations.coordinate.latitude = stop.latitude
-//
-//            busStopAnnotations.append(annotations)
+            let annotation = BusStopAnnotationData(coordinate: CLLocationCoordinate2D.init(latitude: stop.latitude, longitude: stop.longitude), busStopName: RemoveCharacters().busStopName(stop.name), busRoutes: "TBA", atcoCode: stop.atcocode, towards: Localities().towardsGenerator(stop.name, stop.description))
             
-            let annotation = BusStopAnnotationData(coordinate: CLLocationCoordinate2D.init(latitude: stop.latitude, longitude: stop.longitude), busStopName: stop.name, busRoutes: "TBA", atcoCode: stop.atcocode)
+            let serialQueue = DispatchQueue(label: "mainQueue")
             
-            annotationData.append(annotation)
+            serialQueue.sync {
+                annotationData.append(annotation)
+            }
+            
+            
+            
 
         }
         
@@ -270,9 +305,95 @@ extension ViewController: MKMapViewDelegate{
             
         }
         
-        print ("request done")
-        
     }
     
 }
+
+extension ViewController: BusDeparturesManagerDelegate{
+    
+    func didUpdateTable(departures: [BusStopDepartures]) {
+        
+        busDepartures = []
+        
+        for departure in departures{
+            
+            if let countdownDB = Double(departure.countdown), countdownDB < 60.0 && countdownDB > 2.0{
+                
+                busDepartures.append(departure)
+                
+                }
+            }
+        
+        DispatchQueue.main.async {
+            
+            self.tableView.rowHeight = 55.0
+            self.tableView.separatorStyle = .singleLine
+            self.tableView.backgroundView = nil
+            self.tableView.tableFooterView = UIView()
+            self.tableView.reloadData()
+            
+        }
+        
+        busDepartures = busDepartures.sorted{Double($0.countdown) ?? 0 < Double($1.countdown) ?? 0}
+        
+    }
+
+    func didFail(error: Error) {
+        
+        print (error)
+        
+    }
+
+}
+
+extension ViewController: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return busDepartures.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimeTableCell", for: indexPath) as! TimeTableCell
+        cell.busRouteLabel.text = busDepartures[indexPath.row].line
+        cell.directionLabel.text = busDepartures[indexPath.row].direction
+        cell.operatorLabel.text = busDepartures[indexPath.row].operator_name
+        cell.countdownLabel.text = timeRemaining(time: busDepartures[indexPath.row].countdown)
+        
+        return cell
+        
+    }
+    
+    func timeRemaining (time: String) -> String{
+        
+        var result = String()
+        
+        guard let timeInDb = Double(time) else { return "0" }
+        let timeInInt = Int(timeInDb)
+        
+        if timeInInt <= 0{
+            result = "Due"
+        }
+        else{
+            result = String(timeInInt) + " min"
+        }
+        
+        
+        
+        return result
+    }
+    
+    
+    
+    
+    
+}
+
+
+    
+    
+    
+    
+    
+
 

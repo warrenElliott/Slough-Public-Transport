@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8009A13E24852752007B2923 /* BusDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8009A13D24852752007B2923 /* BusDirection.swift */; };
+		806B4658247F98F400C80811 /* CountdownCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B4657247F98F400C80811 /* CountdownCalculator.swift */; };
+		806EA1BB247AC2F300BBE57D /* RemoveCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EA1BA247AC2F300BBE57D /* RemoveCharacters.swift */; };
+		808159E4247E70D600C3F6CB /* TimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808159E2247E70D600C3F6CB /* TimeTableCell.swift */; };
+		808159E5247E70D600C3F6CB /* TimeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808159E3247E70D600C3F6CB /* TimeTableCell.xib */; };
+		808159E7247E83B200C3F6CB /* BusDeparturesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808159E6247E83B200C3F6CB /* BusDeparturesData.swift */; };
+		808159E9247E8ED600C3F6CB /* BusDeparturesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808159E8247E8ED600C3F6CB /* BusDeparturesManager.swift */; };
+		808159EB247EA2EC00C3F6CB /* BusStopDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808159EA247EA2EC00C3F6CB /* BusStopDepartures.swift */; };
 		80B7CFDE246DCD5C006A7D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFDD246DCD5C006A7D40 /* AppDelegate.swift */; };
 		80B7CFE0246DCD5C006A7D40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFDF246DCD5C006A7D40 /* SceneDelegate.swift */; };
 		80B7CFE2246DCD5C006A7D40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFE1246DCD5C006A7D40 /* ViewController.swift */; };
@@ -19,9 +27,19 @@
 		80F0F64C2471A02C002EA2B9 /* BusStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F64B2471A02C002EA2B9 /* BusStops.swift */; };
 		80F0F6582476EB93002EA2B9 /* BusStopAnnotationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F6572476EB93002EA2B9 /* BusStopAnnotationData.swift */; };
 		80F0F65A247763E0002EA2B9 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F659247763E0002EA2B9 /* CalloutView.swift */; };
+		80F0F65C24781232002EA2B9 /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F0F65B24781232002EA2B9 /* CalloutView.xib */; };
+		80F0F65E24781708002EA2B9 /* ShowAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F65D24781708002EA2B9 /* ShowAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8009A13D24852752007B2923 /* BusDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDirection.swift; sourceTree = "<group>"; };
+		806B4657247F98F400C80811 /* CountdownCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCalculator.swift; sourceTree = "<group>"; };
+		806EA1BA247AC2F300BBE57D /* RemoveCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCharacters.swift; sourceTree = "<group>"; };
+		808159E2247E70D600C3F6CB /* TimeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCell.swift; sourceTree = "<group>"; };
+		808159E3247E70D600C3F6CB /* TimeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableCell.xib; sourceTree = "<group>"; };
+		808159E6247E83B200C3F6CB /* BusDeparturesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDeparturesData.swift; sourceTree = "<group>"; };
+		808159E8247E8ED600C3F6CB /* BusDeparturesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDeparturesManager.swift; sourceTree = "<group>"; };
+		808159EA247EA2EC00C3F6CB /* BusStopDepartures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopDepartures.swift; sourceTree = "<group>"; };
 		80B7CFDA246DCD5C006A7D40 /* Slough Public Transport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slough Public Transport.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B7CFDD246DCD5C006A7D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B7CFDF246DCD5C006A7D40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +54,8 @@
 		80F0F64B2471A02C002EA2B9 /* BusStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStops.swift; sourceTree = "<group>"; };
 		80F0F6572476EB93002EA2B9 /* BusStopAnnotationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopAnnotationData.swift; sourceTree = "<group>"; };
 		80F0F659247763E0002EA2B9 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
+		80F0F65B24781232002EA2B9 /* CalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalloutView.xib; sourceTree = "<group>"; };
+		80F0F65D24781708002EA2B9 /* ShowAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +101,18 @@
 		80B7CFF52471628D006A7D40 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				80F0F65D24781708002EA2B9 /* ShowAnnotationView.swift */,
 				80F0F649247181D2002EA2B9 /* LocationBusStopManager.swift */,
 				80B7CFF32471566A006A7D40 /* Localities.swift */,
 				80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */,
 				80F0F64B2471A02C002EA2B9 /* BusStops.swift */,
 				80F0F6572476EB93002EA2B9 /* BusStopAnnotationData.swift */,
+				806EA1BA247AC2F300BBE57D /* RemoveCharacters.swift */,
+				808159E6247E83B200C3F6CB /* BusDeparturesData.swift */,
+				808159E8247E8ED600C3F6CB /* BusDeparturesManager.swift */,
+				808159EA247EA2EC00C3F6CB /* BusStopDepartures.swift */,
+				806B4657247F98F400C80811 /* CountdownCalculator.swift */,
+				8009A13D24852752007B2923 /* BusDirection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +123,9 @@
 				80B7CFE8246DCD5E006A7D40 /* LaunchScreen.storyboard */,
 				80B7CFF1246DCFFD006A7D40 /* Main.storyboard */,
 				80F0F659247763E0002EA2B9 /* CalloutView.swift */,
+				80F0F65B24781232002EA2B9 /* CalloutView.xib */,
+				808159E2247E70D600C3F6CB /* TimeTableCell.swift */,
+				808159E3247E70D600C3F6CB /* TimeTableCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,8 +206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				80B7CFF2246DCFFD006A7D40 /* Main.storyboard in Resources */,
+				808159E5247E70D600C3F6CB /* TimeTableCell.xib in Resources */,
 				80B7CFEA246DCD5E006A7D40 /* LaunchScreen.storyboard in Resources */,
 				80B7CFE7246DCD5D006A7D40 /* Assets.xcassets in Resources */,
+				80F0F65C24781232002EA2B9 /* CalloutView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,15 +220,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80F0F65E24781708002EA2B9 /* ShowAnnotationView.swift in Sources */,
 				80B7CFF42471566A006A7D40 /* Localities.swift in Sources */,
 				80F0F6582476EB93002EA2B9 /* BusStopAnnotationData.swift in Sources */,
+				8009A13E24852752007B2923 /* BusDirection.swift in Sources */,
 				80B7CFE2246DCD5C006A7D40 /* ViewController.swift in Sources */,
+				808159E7247E83B200C3F6CB /* BusDeparturesData.swift in Sources */,
+				808159E9247E8ED600C3F6CB /* BusDeparturesManager.swift in Sources */,
 				80B7CFFA247170D2006A7D40 /* LocationBusStopsData.swift in Sources */,
+				808159E4247E70D600C3F6CB /* TimeTableCell.swift in Sources */,
 				80F0F64A247181D2002EA2B9 /* LocationBusStopManager.swift in Sources */,
+				808159EB247EA2EC00C3F6CB /* BusStopDepartures.swift in Sources */,
 				80F0F65A247763E0002EA2B9 /* CalloutView.swift in Sources */,
 				80B7CFDE246DCD5C006A7D40 /* AppDelegate.swift in Sources */,
 				80F0F64C2471A02C002EA2B9 /* BusStops.swift in Sources */,
+				806EA1BB247AC2F300BBE57D /* RemoveCharacters.swift in Sources */,
 				80B7CFE0246DCD5C006A7D40 /* SceneDelegate.swift in Sources */,
+				806B4658247F98F400C80811 /* CountdownCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

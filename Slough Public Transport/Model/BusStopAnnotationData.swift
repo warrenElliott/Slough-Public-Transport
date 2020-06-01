@@ -15,13 +15,15 @@ class BusStopAnnotationData: NSObject, MKAnnotation{
     var busStopName: String!
     var busRoutes: String!
     var atcoCode: String!
+    var towards: String!
     
-    init(coordinate: CLLocationCoordinate2D, busStopName: String, busRoutes: String, atcoCode: String) {
+    init(coordinate: CLLocationCoordinate2D, busStopName: String, busRoutes: String, atcoCode: String, towards: String) {
         
         self.coordinate = coordinate
         self.busStopName = busStopName
         self.busRoutes = busRoutes
         self.atcoCode = atcoCode
+        self.towards = towards
         
     }
 
