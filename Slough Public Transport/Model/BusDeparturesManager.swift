@@ -73,7 +73,9 @@ struct BusDeparturesManager{
                     
                 for entry in value{
 
-                    let instance = BusStopDepartures(line: entry.line, direction: entry.direction, countdown: CountDownCalculator().countdown(entry.best_departure_estimate, entry.date), operator_name: entry.operator_name)
+                    let instance = BusStopDepartures(line: entry.line, direction: BusDirection().setDestination(entry.direction), countdown: CountDownCalculator().countdown(entry.best_departure_estimate, entry.date), operator_name: entry.operator_name)
+                    
+                    print (entry.direction)
                 
                     stopDepartures.append(instance)
 
