@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8009A13E24852752007B2923 /* BusDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8009A13D24852752007B2923 /* BusDirection.swift */; };
+		8009A1402487C84E007B2923 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8009A13F2487C84E007B2923 /* TabBarController.swift */; };
+		8016B69F248E41A300C8BC44 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8016B69E248E41A300C8BC44 /* FavouritesVC.swift */; };
+		8016B6A1248E4E0B00C8BC44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8016B6A0248E4E0B00C8BC44 /* GoogleService-Info.plist */; };
 		806B4658247F98F400C80811 /* CountdownCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B4657247F98F400C80811 /* CountdownCalculator.swift */; };
 		806EA1BB247AC2F300BBE57D /* RemoveCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EA1BA247AC2F300BBE57D /* RemoveCharacters.swift */; };
 		808159E4247E70D600C3F6CB /* TimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808159E2247E70D600C3F6CB /* TimeTableCell.swift */; };
@@ -17,7 +20,7 @@
 		808159EB247EA2EC00C3F6CB /* BusStopDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808159EA247EA2EC00C3F6CB /* BusStopDepartures.swift */; };
 		80B7CFDE246DCD5C006A7D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFDD246DCD5C006A7D40 /* AppDelegate.swift */; };
 		80B7CFE0246DCD5C006A7D40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFDF246DCD5C006A7D40 /* SceneDelegate.swift */; };
-		80B7CFE2246DCD5C006A7D40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFE1246DCD5C006A7D40 /* ViewController.swift */; };
+		80B7CFE2246DCD5C006A7D40 /* TimetableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFE1246DCD5C006A7D40 /* TimetableVC.swift */; };
 		80B7CFE7246DCD5D006A7D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B7CFE6246DCD5D006A7D40 /* Assets.xcassets */; };
 		80B7CFEA246DCD5E006A7D40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B7CFE8246DCD5E006A7D40 /* LaunchScreen.storyboard */; };
 		80B7CFF2246DCFFD006A7D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B7CFF1246DCFFD006A7D40 /* Main.storyboard */; };
@@ -29,10 +32,15 @@
 		80F0F65A247763E0002EA2B9 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F659247763E0002EA2B9 /* CalloutView.swift */; };
 		80F0F65C24781232002EA2B9 /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F0F65B24781232002EA2B9 /* CalloutView.xib */; };
 		80F0F65E24781708002EA2B9 /* ShowAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F65D24781708002EA2B9 /* ShowAnnotationView.swift */; };
+		80F1BE9E248E7884009D5E21 /* FavouriteBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F1BE9D248E7884009D5E21 /* FavouriteBusStop.swift */; };
+		BA418B7ADC043D21464D1A2D /* Pods_Slough_Public_Transport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D623A2A9D21DCF1D372D23C1 /* Pods_Slough_Public_Transport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8009A13D24852752007B2923 /* BusDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDirection.swift; sourceTree = "<group>"; };
+		8009A13F2487C84E007B2923 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8016B69E248E41A300C8BC44 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
+		8016B6A0248E4E0B00C8BC44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		806B4657247F98F400C80811 /* CountdownCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCalculator.swift; sourceTree = "<group>"; };
 		806EA1BA247AC2F300BBE57D /* RemoveCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCharacters.swift; sourceTree = "<group>"; };
 		808159E2247E70D600C3F6CB /* TimeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCell.swift; sourceTree = "<group>"; };
@@ -43,7 +51,7 @@
 		80B7CFDA246DCD5C006A7D40 /* Slough Public Transport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slough Public Transport.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B7CFDD246DCD5C006A7D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B7CFDF246DCD5C006A7D40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80B7CFE1246DCD5C006A7D40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80B7CFE1246DCD5C006A7D40 /* TimetableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableVC.swift; sourceTree = "<group>"; };
 		80B7CFE6246DCD5D006A7D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80B7CFE9246DCD5E006A7D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80B7CFEB246DCD5E006A7D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +64,10 @@
 		80F0F659247763E0002EA2B9 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
 		80F0F65B24781232002EA2B9 /* CalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalloutView.xib; sourceTree = "<group>"; };
 		80F0F65D24781708002EA2B9 /* ShowAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAnnotationView.swift; sourceTree = "<group>"; };
+		80F1BE9D248E7884009D5E21 /* FavouriteBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteBusStop.swift; sourceTree = "<group>"; };
+		BD9E0ACDBB1825931D3302BA /* Pods-Slough Public Transport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slough Public Transport.debug.xcconfig"; path = "Target Support Files/Pods-Slough Public Transport/Pods-Slough Public Transport.debug.xcconfig"; sourceTree = "<group>"; };
+		D623A2A9D21DCF1D372D23C1 /* Pods_Slough_Public_Transport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slough_Public_Transport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB94E8B142999B68551B5863 /* Pods-Slough Public Transport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slough Public Transport.release.xcconfig"; path = "Target Support Files/Pods-Slough Public Transport/Pods-Slough Public Transport.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +75,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA418B7ADC043D21464D1A2D /* Pods_Slough_Public_Transport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		513C8305C3E955A204302C97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D623A2A9D21DCF1D372D23C1 /* Pods_Slough_Public_Transport.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		803E7A88A9A27AAEFBE231C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD9E0ACDBB1825931D3302BA /* Pods-Slough Public Transport.debug.xcconfig */,
+				FB94E8B142999B68551B5863 /* Pods-Slough Public Transport.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		80B7CFD1246DCD5C006A7D40 = {
 			isa = PBXGroup;
 			children = (
 				80B7CFDC246DCD5C006A7D40 /* Slough Public Transport */,
 				80B7CFDB246DCD5C006A7D40 /* Products */,
+				803E7A88A9A27AAEFBE231C2 /* Pods */,
+				513C8305C3E955A204302C97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +126,7 @@
 				80B7CFF52471628D006A7D40 /* Model */,
 				80B7CFE6246DCD5D006A7D40 /* Assets.xcassets */,
 				80B7CFEB246DCD5E006A7D40 /* Info.plist */,
+				8016B6A0248E4E0B00C8BC44 /* GoogleService-Info.plist */,
 			);
 			path = "Slough Public Transport";
 			sourceTree = "<group>";
@@ -113,6 +146,7 @@
 				808159EA247EA2EC00C3F6CB /* BusStopDepartures.swift */,
 				806B4657247F98F400C80811 /* CountdownCalculator.swift */,
 				8009A13D24852752007B2923 /* BusDirection.swift */,
+				80F1BE9D248E7884009D5E21 /* FavouriteBusStop.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,7 +167,9 @@
 		80B7CFF72471629A006A7D40 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				80B7CFE1246DCD5C006A7D40 /* ViewController.swift */,
+				8009A13F2487C84E007B2923 /* TabBarController.swift */,
+				80B7CFE1246DCD5C006A7D40 /* TimetableVC.swift */,
+				8016B69E248E41A300C8BC44 /* FavouritesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80B7CFEE246DCD5E006A7D40 /* Build configuration list for PBXNativeTarget "Slough Public Transport" */;
 			buildPhases = (
+				A464C7C3A9C13F525E348044 /* [CP] Check Pods Manifest.lock */,
 				80B7CFD6246DCD5C006A7D40 /* Sources */,
 				80B7CFD7246DCD5C006A7D40 /* Frameworks */,
 				80B7CFD8246DCD5C006A7D40 /* Resources */,
+				69D6BB6724FCB37190BF759A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,10 +248,53 @@
 				80B7CFEA246DCD5E006A7D40 /* LaunchScreen.storyboard in Resources */,
 				80B7CFE7246DCD5D006A7D40 /* Assets.xcassets in Resources */,
 				80F0F65C24781232002EA2B9 /* CalloutView.xib in Resources */,
+				8016B6A1248E4E0B00C8BC44 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69D6BB6724FCB37190BF759A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Slough Public Transport/Pods-Slough Public Transport-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Slough Public Transport/Pods-Slough Public Transport-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Slough Public Transport/Pods-Slough Public Transport-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A464C7C3A9C13F525E348044 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Slough Public Transport-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		80B7CFD6246DCD5C006A7D40 /* Sources */ = {
@@ -223,11 +304,14 @@
 				80F0F65E24781708002EA2B9 /* ShowAnnotationView.swift in Sources */,
 				80B7CFF42471566A006A7D40 /* Localities.swift in Sources */,
 				80F0F6582476EB93002EA2B9 /* BusStopAnnotationData.swift in Sources */,
+				8009A1402487C84E007B2923 /* TabBarController.swift in Sources */,
 				8009A13E24852752007B2923 /* BusDirection.swift in Sources */,
-				80B7CFE2246DCD5C006A7D40 /* ViewController.swift in Sources */,
+				80B7CFE2246DCD5C006A7D40 /* TimetableVC.swift in Sources */,
 				808159E7247E83B200C3F6CB /* BusDeparturesData.swift in Sources */,
 				808159E9247E8ED600C3F6CB /* BusDeparturesManager.swift in Sources */,
+				8016B69F248E41A300C8BC44 /* FavouritesVC.swift in Sources */,
 				80B7CFFA247170D2006A7D40 /* LocationBusStopsData.swift in Sources */,
+				80F1BE9E248E7884009D5E21 /* FavouriteBusStop.swift in Sources */,
 				808159E4247E70D600C3F6CB /* TimeTableCell.swift in Sources */,
 				80F0F64A247181D2002EA2B9 /* LocationBusStopManager.swift in Sources */,
 				808159EB247EA2EC00C3F6CB /* BusStopDepartures.swift in Sources */,
@@ -370,6 +454,7 @@
 		};
 		80B7CFEF246DCD5E006A7D40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD9E0ACDBB1825931D3302BA /* Pods-Slough Public Transport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +473,7 @@
 		};
 		80B7CFF0246DCD5E006A7D40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB94E8B142999B68551B5863 /* Pods-Slough Public Transport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

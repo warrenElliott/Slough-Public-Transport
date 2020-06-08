@@ -32,6 +32,7 @@ class TimetableVC: UIViewController, BusStopsAtLocationDelegate, UITableViewDele
     var busStopAnnotations: [MKPointAnnotation] = []
     
     var annotationData: [BusStopAnnotationData] = []
+    var busStopAnnotation = BusStopAnnotationData(coordinate: CLLocationCoordinate2D(), busStopName: "", busRoutes: "", atcoCode: "", towards: "")
     
     var busDepartures: [BusStopDepartures] = []
     
@@ -42,6 +43,7 @@ class TimetableVC: UIViewController, BusStopsAtLocationDelegate, UITableViewDele
         tableView.register(UINib(nibName: "TimeTableCell", bundle: nil), forCellReuseIdentifier: "TimeTableCell")
 
         placeholderForTableView()
+        tableView.addSubview(refresh)
         
         mapView.delegate = self
         locationBusStopManager.delegate = self
@@ -156,11 +158,9 @@ class TimetableVC: UIViewController, BusStopsAtLocationDelegate, UITableViewDele
 
 extension TimetableVC: CLLocationManagerDelegate{
     
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
     }
-    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
@@ -209,6 +209,18 @@ extension TimetableVC: MKMapViewDelegate{
         
     }
     
+    var refresh: UIRefreshControl{
+        let ref = UIRefreshControl()
+        ref.addTarget(self, action: #selector(handleRefresh(_ :)),  for: .valueChanged)
+        return ref
+    }
+    
+    @objc func handleRefresh(_ control: UIRefreshControl){
+        
+        busDeparturesManager.fetchDepartures(busStopAnnotation.atcoCode!)
+        control.endRefreshing()
+    }
+    
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
@@ -218,7 +230,7 @@ extension TimetableVC: MKMapViewDelegate{
         
         else{
             
-            let busStopAnnotation = view.annotation as! BusStopAnnotationData
+            busStopAnnotation = view.annotation as! BusStopAnnotationData
             let calloutView = Bundle.main.loadNibNamed("CalloutView", owner: nibName, options: nil)
             
             let views = calloutView?[0] as! CalloutView
@@ -226,7 +238,9 @@ extension TimetableVC: MKMapViewDelegate{
             views.busStopName.text = busStopAnnotation.busStopName
             views.busRoutes.text = "To be confirmed"
             views.torwardsInfo.text = busStopAnnotation.towards
+            views.atCoCode = busStopAnnotation.atcoCode
             
+    
             views.center = CGPoint(x: view.bounds.size.width / 2, y: -views.bounds.size.height*0.52)
             view.addSubview(views)
     
@@ -378,14 +392,8 @@ extension TimetableVC: UITableViewDataSource{
             result = String(timeInInt) + " min"
         }
         
-        
-        
         return result
     }
-    
-    
-    
-    
     
 }
 

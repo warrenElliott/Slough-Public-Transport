@@ -64,6 +64,9 @@ struct BusDirection{
         case "Kennedy Park Shops":
             output = "Britwell"
             
+        case "Burnham, Garibaldi":
+            output = "Burnham"
+            
         default:
             output = destination
             

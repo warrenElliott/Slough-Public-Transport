@@ -79,12 +79,6 @@ struct BusDeparturesManager{
                 
                     stopDepartures.append(instance)
 
-//                    if let count = Double(instance.countdown), count<=40.0{
-//
-//                        stopDepartures.append(instance)
-//
-//                    }
-
                 }
                 
             }

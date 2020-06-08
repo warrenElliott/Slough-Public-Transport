@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1037795348434-moqcvdjr4sv8pq2bvm9mecvc9uvh512h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1037795348434-moqcvdjr4sv8pq2bvm9mecvc9uvh512h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCJ8uOepy9uxPSDtgS4uL1xArtITOrOB48</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1037795348434</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.warrenElliott.Slough-Public-Transport</string>
+	<key>PROJECT_ID</key>
+	<string>slough-public-transport</string>
+	<key>STORAGE_BUCKET</key>
+	<string>slough-public-transport.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1037795348434:ios:a1ff58f7075e339b99c20b</string>
+	<key>DATABASE_URL</key>
+	<string>https://slough-public-transport.firebaseio.com</string>
+</dict>
+</plist>
