@@ -10,7 +10,7 @@
         <!--Favorites-->
         <scene sceneID="eIv-qn-5ex">
             <objects>
-                <viewController id="jhc-XT-9J0" customClass="FavouritesVC" customModule="Slough_Public_Transport" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jhc-XT-9J0" customClass="FavouritesVC" customModule="Slough_Buses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lgm-AN-e3o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="pCE-dW-m0G" kind="presentation" trigger="accessoryAction" id="ZwU-7E-yiL"/>
+                                            <segue destination="pCE-dW-m0G" kind="presentation" identifier="showFaveStopTime" trigger="accessoryAction" id="ZwU-7E-yiL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,17 +74,44 @@
             </objects>
             <point key="canvasLocation" x="-430.43478260869568" y="513.61607142857144"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Fave Stop TimesVC-->
         <scene sceneID="Yjv-YL-4he">
             <objects>
-                <tableViewController id="pCE-dW-m0G" sceneMemberID="viewController">
+                <tableViewController id="pCE-dW-m0G" customClass="FaveStopTimesVC" customModule="Slough_Buses" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gVB-ev-GKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ndS-ve-P9o">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN7-Xi-AWU">
+                                    <rect key="frame" x="10" y="15" width="404" height="30"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3A-kd-gGf">
+                                    <rect key="frame" x="10" y="57.000000000000007" width="404" height="20.333333333333336"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="ZN7-Xi-AWU" firstAttribute="leading" secondItem="ndS-ve-P9o" secondAttribute="leading" constant="10" id="0GO-eK-eSI"/>
+                                <constraint firstAttribute="trailing" secondItem="ZN7-Xi-AWU" secondAttribute="trailing" id="2Rt-GG-yEW"/>
+                                <constraint firstItem="a3A-kd-gGf" firstAttribute="leading" secondItem="ndS-ve-P9o" secondAttribute="leading" constant="10" id="CCH-dz-Rml"/>
+                                <constraint firstAttribute="trailing" secondItem="a3A-kd-gGf" secondAttribute="trailing" id="ftE-mv-SEN"/>
+                                <constraint firstItem="a3A-kd-gGf" firstAttribute="top" secondItem="ZN7-Xi-AWU" secondAttribute="bottom" constant="12" id="mp0-bx-Ztb"/>
+                                <constraint firstItem="ZN7-Xi-AWU" firstAttribute="top" secondItem="ndS-ve-P9o" secondAttribute="top" constant="15" id="vc8-7c-cRz"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favouritesTimeTable" id="rO5-8a-c1T">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rO5-8a-c1T" id="1vl-31-7b9">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
@@ -97,15 +124,19 @@
                             <outlet property="delegate" destination="pCE-dW-m0G" id="hOk-5G-dN1"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="faveStopLabel" destination="ZN7-Xi-AWU" id="OER-Fq-yQy"/>
+                        <outlet property="faveTowardsLabel" destination="a3A-kd-gGf" id="wRg-O4-iuZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbN-m4-6Ws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335" y="514"/>
+            <point key="canvasLocation" x="334.78260869565219" y="513.61607142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yRD-6h-g2I">
             <objects>
-                <tabBarController id="OSo-4f-GfW" customClass="TabBarController" customModule="Slough_Public_Transport" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="OSo-4f-GfW" customClass="TabBarController" customModule="Slough_Buses" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vcJ-xI-Su1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -123,7 +154,7 @@
         <!--Live Bus Timetable-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TimetableVC" customModule="Slough_Public_Transport" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TimetableVC" customModule="Slough_Buses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,6 +242,6 @@
     <resources>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="star.fill" catalog="system" width="32" height="32"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

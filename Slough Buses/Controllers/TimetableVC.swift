@@ -20,21 +20,21 @@ class TimetableVC: UIViewController, BusStopsAtLocationDelegate, UITableViewDele
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 500
     
-    var latitude: String?
-    var longitude: String?
-    var customLatitude = String()
+    var latitude: String? //initial latutide when loaded
+    var longitude: String? //initial long when loaded
+    var customLatitude = String() //lat/lon when map is dragged at center point
     var customLongitude = String()
     
-    var locationBusStopManager = LocationBusStopManager()
-    var busDeparturesManager = BusDeparturesManager()
+    var locationBusStopManager = LocationBusStopManager() //launching API calls
+    var busDeparturesManager = BusDeparturesManager() //launching API calls
     
     var busStopsAtLocation = [BusStops]()
-    var busStopAnnotations: [MKPointAnnotation] = []
+    var busStopAnnotations: [MKPointAnnotation] = [] //annotations
     
-    var annotationData: [BusStopAnnotationData] = []
-    var busStopAnnotation = BusStopAnnotationData(coordinate: CLLocationCoordinate2D(), busStopName: "", busRoutes: "", atcoCode: "", towards: "")
+    var annotationData: [BusStopAnnotationData] = [] //annotation data in list
+    var busStopAnnotation = BusStopAnnotationData(coordinate: CLLocationCoordinate2D(), busStopName: "", busRoutes: "", atcoCode: "", towards: "") //annotation builder
     
-    var busDepartures: [BusStopDepartures] = []
+    var busDepartures: [BusStopDepartures] = [] //bus stop departures
     
     override func viewDidLoad() {
         
@@ -81,7 +81,7 @@ class TimetableVC: UIViewController, BusStopsAtLocationDelegate, UITableViewDele
         let noDataLabel: UILabel = UILabel()
         noDataLabel.text = "Tap  on  a  bus  stop  to  get  live  departures"
         noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
-        noDataLabel.font = UIFont(name: "Farah", size: 17.0)
+        noDataLabel.font = UIFont(name: "Arial", size: 17.0)
         noDataLabel.textAlignment = NSTextAlignment.center
         tableView.backgroundView = noDataLabel
         self.tableView.reloadData()

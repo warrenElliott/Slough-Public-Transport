@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.warrenElliott.Slough-Public-Transport</string>
+	<string>com.warrenElliott.Slough-Buses</string>
 	<key>PROJECT_ID</key>
 	<string>slough-public-transport</string>
 	<key>STORAGE_BUCKET</key>
 	<string>slough-public-transport.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:1037795348434:ios:a1ff58f7075e339b99c20b</string>
 	<key>DATABASE_URL</key>

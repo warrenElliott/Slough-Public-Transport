@@ -19,6 +19,10 @@ class FavouritesVC: UIViewController, UITableViewDelegate{
     var favourites = [FavouriteBusStop]()
     var busStopName = String()
     var busStopAtCoCode = String()
+    
+    var faveStopCode = String()
+    var faveStopName = String()
+    var faveStopTowards = String()
 
     
     override func viewDidLoad() {
@@ -88,9 +92,30 @@ extension FavouritesVC: UITableViewDataSource{
         return cell
 
     }
-
-
-
-
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        faveStopCode = favourites[indexPath.row].code
+        faveStopName = favourites[indexPath.row].stopName
+        faveStopTowards = favourites[indexPath.row].towardsInfo
+        
+        performSegue(withIdentifier: "showFaveStopTime", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showFaveStopTime"{
+            
+            let destinationVC = segue.destination as! FaveStopTimesVC
+            
+            destinationVC.requiredData.atcoCode = faveStopCode
+            destinationVC.requiredData.stopName = faveStopName
+            destinationVC.requiredData.torwards = faveStopTowards
+            
+        }
+        
+    }
+    
+    
 }

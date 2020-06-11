@@ -26,6 +26,8 @@
 		80B7CFF2246DCFFD006A7D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B7CFF1246DCFFD006A7D40 /* Main.storyboard */; };
 		80B7CFF42471566A006A7D40 /* Localities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFF32471566A006A7D40 /* Localities.swift */; };
 		80B7CFFA247170D2006A7D40 /* LocationBusStopsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */; };
+		80D2DDCF24912BF600889F58 /* FaveStopTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D2DDCE24912BF600889F58 /* FaveStopTimes.swift */; };
+		80D2DDD12492757A00889F58 /* StopTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D2DDD02492757A00889F58 /* StopTableView.swift */; };
 		80F0F64A247181D2002EA2B9 /* LocationBusStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F649247181D2002EA2B9 /* LocationBusStopManager.swift */; };
 		80F0F64C2471A02C002EA2B9 /* BusStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F64B2471A02C002EA2B9 /* BusStops.swift */; };
 		80F0F6582476EB93002EA2B9 /* BusStopAnnotationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F6572476EB93002EA2B9 /* BusStopAnnotationData.swift */; };
@@ -48,7 +50,7 @@
 		808159E6247E83B200C3F6CB /* BusDeparturesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDeparturesData.swift; sourceTree = "<group>"; };
 		808159E8247E8ED600C3F6CB /* BusDeparturesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDeparturesManager.swift; sourceTree = "<group>"; };
 		808159EA247EA2EC00C3F6CB /* BusStopDepartures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopDepartures.swift; sourceTree = "<group>"; };
-		80B7CFDA246DCD5C006A7D40 /* Slough Public Transport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slough Public Transport.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B7CFDA246DCD5C006A7D40 /* Slough Buses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slough Buses.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B7CFDD246DCD5C006A7D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B7CFDF246DCD5C006A7D40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		80B7CFE1246DCD5C006A7D40 /* TimetableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableVC.swift; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		80B7CFF1246DCFFD006A7D40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		80B7CFF32471566A006A7D40 /* Localities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localities.swift; sourceTree = "<group>"; };
 		80B7CFF9247170D2006A7D40 /* LocationBusStopsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBusStopsData.swift; sourceTree = "<group>"; };
+		80D2DDCE24912BF600889F58 /* FaveStopTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveStopTimes.swift; sourceTree = "<group>"; };
+		80D2DDD02492757A00889F58 /* StopTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTableView.swift; sourceTree = "<group>"; };
 		80F0F649247181D2002EA2B9 /* LocationBusStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBusStopManager.swift; sourceTree = "<group>"; };
 		80F0F64B2471A02C002EA2B9 /* BusStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStops.swift; sourceTree = "<group>"; };
 		80F0F6572476EB93002EA2B9 /* BusStopAnnotationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopAnnotationData.swift; sourceTree = "<group>"; };
@@ -102,7 +106,7 @@
 		80B7CFD1246DCD5C006A7D40 = {
 			isa = PBXGroup;
 			children = (
-				80B7CFDC246DCD5C006A7D40 /* Slough Public Transport */,
+				80B7CFDC246DCD5C006A7D40 /* Slough Buses */,
 				80B7CFDB246DCD5C006A7D40 /* Products */,
 				803E7A88A9A27AAEFBE231C2 /* Pods */,
 				513C8305C3E955A204302C97 /* Frameworks */,
@@ -112,12 +116,12 @@
 		80B7CFDB246DCD5C006A7D40 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80B7CFDA246DCD5C006A7D40 /* Slough Public Transport.app */,
+				80B7CFDA246DCD5C006A7D40 /* Slough Buses.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80B7CFDC246DCD5C006A7D40 /* Slough Public Transport */ = {
+		80B7CFDC246DCD5C006A7D40 /* Slough Buses */ = {
 			isa = PBXGroup;
 			children = (
 				80B7CFF8247162A6006A7D40 /* Supporting Files */,
@@ -128,7 +132,7 @@
 				80B7CFEB246DCD5E006A7D40 /* Info.plist */,
 				8016B6A0248E4E0B00C8BC44 /* GoogleService-Info.plist */,
 			);
-			path = "Slough Public Transport";
+			path = "Slough Buses";
 			sourceTree = "<group>";
 		};
 		80B7CFF52471628D006A7D40 /* Model */ = {
@@ -170,6 +174,8 @@
 				8009A13F2487C84E007B2923 /* TabBarController.swift */,
 				80B7CFE1246DCD5C006A7D40 /* TimetableVC.swift */,
 				8016B69E248E41A300C8BC44 /* FavouritesVC.swift */,
+				80D2DDCE24912BF600889F58 /* FaveStopTimes.swift */,
+				80D2DDD02492757A00889F58 /* StopTableView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,9 +192,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80B7CFD9246DCD5C006A7D40 /* Slough Public Transport */ = {
+		80B7CFD9246DCD5C006A7D40 /* Slough Buses */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80B7CFEE246DCD5E006A7D40 /* Build configuration list for PBXNativeTarget "Slough Public Transport" */;
+			buildConfigurationList = 80B7CFEE246DCD5E006A7D40 /* Build configuration list for PBXNativeTarget "Slough Buses" */;
 			buildPhases = (
 				A464C7C3A9C13F525E348044 /* [CP] Check Pods Manifest.lock */,
 				80B7CFD6246DCD5C006A7D40 /* Sources */,
@@ -200,9 +206,9 @@
 			);
 			dependencies = (
 			);
-			name = "Slough Public Transport";
+			name = "Slough Buses";
 			productName = "Slough Public Transport";
-			productReference = 80B7CFDA246DCD5C006A7D40 /* Slough Public Transport.app */;
+			productReference = 80B7CFDA246DCD5C006A7D40 /* Slough Buses.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 80B7CFD5246DCD5C006A7D40 /* Build configuration list for PBXProject "Slough Public Transport" */;
+			buildConfigurationList = 80B7CFD5246DCD5C006A7D40 /* Build configuration list for PBXProject "Slough Buses" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -233,7 +239,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80B7CFD9246DCD5C006A7D40 /* Slough Public Transport */,
+				80B7CFD9246DCD5C006A7D40 /* Slough Buses */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F0F65E24781708002EA2B9 /* ShowAnnotationView.swift in Sources */,
+				80D2DDD12492757A00889F58 /* StopTableView.swift in Sources */,
 				80B7CFF42471566A006A7D40 /* Localities.swift in Sources */,
 				80F0F6582476EB93002EA2B9 /* BusStopAnnotationData.swift in Sources */,
 				8009A1402487C84E007B2923 /* TabBarController.swift in Sources */,
@@ -319,6 +326,7 @@
 				80B7CFDE246DCD5C006A7D40 /* AppDelegate.swift in Sources */,
 				80F0F64C2471A02C002EA2B9 /* BusStops.swift in Sources */,
 				806EA1BB247AC2F300BBE57D /* RemoveCharacters.swift in Sources */,
+				80D2DDCF24912BF600889F58 /* FaveStopTimes.swift in Sources */,
 				80B7CFE0246DCD5C006A7D40 /* SceneDelegate.swift in Sources */,
 				806B4658247F98F400C80811 /* CountdownCalculator.swift in Sources */,
 			);
@@ -459,12 +467,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84DJYQD757;
-				INFOPLIST_FILE = "Slough Public Transport/Info.plist";
+				INFOPLIST_FILE = "Slough Buses/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.warrenElliott.Slough-Public-Transport";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.warrenElliott.Slough-Buses";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,12 +486,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84DJYQD757;
-				INFOPLIST_FILE = "Slough Public Transport/Info.plist";
+				INFOPLIST_FILE = "Slough Buses/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.warrenElliott.Slough-Public-Transport";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.warrenElliott.Slough-Buses";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,7 +501,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		80B7CFD5246DCD5C006A7D40 /* Build configuration list for PBXProject "Slough Public Transport" */ = {
+		80B7CFD5246DCD5C006A7D40 /* Build configuration list for PBXProject "Slough Buses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80B7CFEC246DCD5E006A7D40 /* Debug */,
@@ -502,7 +510,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80B7CFEE246DCD5E006A7D40 /* Build configuration list for PBXNativeTarget "Slough Public Transport" */ = {
+		80B7CFEE246DCD5E006A7D40 /* Build configuration list for PBXNativeTarget "Slough Buses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80B7CFEF246DCD5E006A7D40 /* Debug */,
